@@ -1,23 +1,808 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
+
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://yourdomain.com/the-all-new-carnival-price#webpage",
+          "url": "https://yourdomain.com/the-all-new-carnival-price",
+          "name": "2026 더 올 뉴 카니발 가격표 총정리 및 트림별 상세 구매 비용 비교 가이드",
+          "description": "2026년형 기아 더 올 뉴 카니발의 신차 가격, 가솔린 및 하이브리드 모델별 취등록세와 유지비 계산법, 장기렌트 리스 최저가 비교 등 구매에 필요한 전문 정보를 상세히 분석합니다.",
+          "inLanguage": "ko-KR",
+          "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://yourdomain.com/#website",
+            "url": "https://yourdomain.com/",
+            "name": "자동차 종합 백과",
+            "description": "국내외 신차 정보 및 합리적인 자동차 구매 가이드 제공"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://yourdomain.com/the-all-new-carnival-price#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "더 올 뉴 카니발 하이브리드 모델의 실구매 가격과 대기 기간은 어느 정도인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "2026년형 더 올 뉴 카니발 1.6 터보 하이브리드의 공식 시작 가격은 9인승 프레스티지 기준 4,091만 원이며, 시그니처 트림은 4,881만 원입니다. 인기 트림과 옵션을 추가할 경우 평균 5,000만 원 초반대 금액이 소요됩니다. 하이브리드 모델은 지속적인 고수요로 인해 신차 출고까지 예상 대기 기간이 약 6개월에서 10개월 내외로 소요되고 있으며, 빠른 출고를 원할 경우 대행 업체의 즉시 출고 물량을 전문 업체를 통해 확인하는 것이 좋습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "카니발 7인승과 9인승의 세제 혜택과 차이점은 무엇인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "9인승 모델은 개별소비세 면제 대상이며, 6인 이상 탑승 시 고속도로 버스전용차로 이용이 가능합니다. 또한 개인사업자나 법인사업자가 구매할 경우 부가세 환급 혜택을 받을 수 있어 업무용 차량으로 인기가 많습니다. 반면, 7인승 모델은 2열 프리미엄 릴렉션 시트가 적용되어 승차감이 우수하지만 개별소비세 부과 대상이며 버스전용차로 이용이나 부가세 환급 혜택이 제외되는 차이점이 있습니다."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
+        :root {
+            --primary-color: #1a365d; /* 차분하고 깊이감 있는 블루 */
+            --secondary-color: #2b6cb0; /* 정보 영역의 서브 블루 */
+            --accent-color: #dd6b20; /* 온화한 느낌의 오렌지 에셋 */
+            --background-light: #f7fafc; /* 부드러운 화이트 그레이 */
+            --text-dark: #2d3748; /* 다크 그레이 */
+            --text-light: #ffffff;
+            --border-color: #e2e8f0;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            font-size: 16px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin: 1rem 0 0;
+        }
+
+        nav {
+            background-color: var(--secondary-color);
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color var(--transition-speed);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background-color: #ffffff;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            border-left: 6px solid var(--secondary-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 2.1rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h3 {
+            color: var(--accent-color);
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 12px;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* 테이블 스타일 현대화 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+            box-shadow: var(--card-shadow);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 1.1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            font-weight: 700;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f8fafc;
+        }
+
+        tr:hover td {
+            background-color: #edf2f7;
+        }
+
+        /* 키워드 태그 클라우드 */
+        .keyword-box {
+            background-color: #ebf8ff;
+            border: 1px solid #bee3f8;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .keyword-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .keyword-tags span {
+            background-color: #ffffff;
+            color: var(--secondary-color);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* 가로막대 그래프 컴포넌트 */
+        .chart-section {
+            background-color: #f7fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .chart-title {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .bar-wrapper {
+            margin-bottom: 1.2rem;
+        }
+
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .bar-track {
+            background-color: #e2e8f0;
+            height: 24px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            background-color: var(--secondary-color);
+            height: 100%;
+            transition: width 1.5s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .bar-fill.accent {
+            background-color: var(--accent-color);
+        }
+
+        /* FAQ 스타일링 */
+        .faq-wrapper {
+            margin: 2rem 0;
+        }
+
+        .faq-node {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
+            background-color: #ffffff;
+        }
+
+        .faq-query {
+            background-color: #edf2f7;
+            padding: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-reply {
+            padding: 1.2rem;
+            border-top: 1px solid var(--border-color);
+            display: none;
+            color: var(--text-dark);
+            background-color: #ffffff;
+        }
+
+        /* 인터랙티브 계산기 폼 */
+        .calc-wrapper {
+            background-color: #fffaf0;
+            border: 1px solid #feebc8;
+            border-radius: 10px;
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .calc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .field-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .field-group label {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .field-group select, .field-group input {
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            background-color: #ffffff;
+        }
+
+        .btn-calc {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color var(--transition-speed);
+            width: 100%;
+        }
+
+        .btn-calc:hover {
+            background-color: #c05621;
+        }
+
+        .calc-result {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background-color: #fff;
+            border: 1px dashed var(--accent-color);
+            border-radius: 6px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: none;
+        }
+
+        .cta-action-btn {
+            display: block;
+            text-align: center;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            font-size: 1.3rem;
+            font-weight: 700;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 3rem 0;
+            box-shadow: 0 4px 10px rgba(221, 107, 32, 0.3);
+            transition: transform var(--transition-speed), background-color var(--transition-speed);
+        }
+
+        .cta-action-btn:hover {
+            background-color: #c05621;
+            transform: translateY(-2px);
+        }
+
+        .external-links a {
+            display: block;
+            color: var(--secondary-color);
+            text-decoration: none;
+            padding: 8px 0;
+            font-weight: 500;
+            border-bottom: 1px dashed var(--border-color);
+            transition: color var(--transition-speed);
+        }
+
+        .external-links a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 3rem 1.5rem;
+            font-size: 0.95rem;
+            margin-top: 4rem;
+            border-top: 4px solid var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>더 올 뉴 카니발 가격표 및 트림별 상세 견적 분석 가이드</h1>
+        <p>2026년형 기아 카니발 하이브리드 및 가솔린 모델 실구매 비용과 옵션 선택 전략</p>
+    </header>
+
     <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+        <ul>
+            <li><a href="#section-intro">모델 개요</a></li>
+            <li><a href="#section-prices">등급별 공식 가격표</a></li>
+            <li><a href="#section-comparison">가솔린 vs 하이브리드</a></li>
+            <li><a href="#section-finance">장기렌트 및 리스 성지</a></li>
+            <li><a href="#section-owner-reviews">커뮤니티 내돈내산 후기</a></li>
+            <li><a href="#section-calculator">예상 견적 계산기</a></li>
+            <li><a href="#section-faq">자주 묻는 질문</a></li>
+        </ul>
     </nav>
+
     <main>
-      <h1>Home page</h1>
+        <section id="section-intro">
+            <h2>대한민국 대표 미니밴 더 올 뉴 카니발의 변화와 시장 동향</h2>
+            <p>기아의 대표적인 패밀리카이자 독보적인 세그먼트를 차지하고 있는 더 올 뉴 카니발은 매년 세련된 디자인과 개선된 파워트레인을 무기로 패밀리 RV 시장에서 왕좌를 유지하고 있습니다. 특히 친환경 및 고효율 차량에 대한 선호도가 급상승함에 따라 기아 카니발 하이브리드 라인업의 인기는 나날이 높아지고 있습니다. 최근에는 연식 변경 모델인 The 2026 카니발이 새롭게 출시되면서 소비자들의 선택지는 한층 다변화되었습니다.</p>
+            
+            <p>이번에 출시된 2026년형 모델은 기본 트림부터 고객 선호 사양을 폭넓게 기본화하여 가성비를 높였고 디자인 특화 트림의 구성을 새롭게 조정한 것이 주요 특징입니다. 기존 그래비티 트림이 엑스라인(X-Line)이라는 명칭으로 새롭게 개편되면서 전용 블랙 외장 엠블럼과 한층 세련된 휠 디자인을 통해 고급스럽고 강인한 이미지를 연출했습니다. 디젤 파워트레인이 점진적으로 축소되거나 일부 단종 절차를 밟는 변화 속에서, 시장의 시선은 3.5 가솔린 엔진과 1.6 터보 하이브리드로 집중되는 추세입니다.</p>
+
+            <div class="keyword-box">
+                <p><strong>더 올 뉴 카니발 관련 검색 트렌드 및 추천 연관 태그</strong></p>
+                <div class="keyword-tags">
+                    <span>더 뉴 카니발 가격표</span>
+                    <span>카니발 하이브리드 실연비</span>
+                    <span>카니발 9인승 혜택</span>
+                    <span>카니발 7인승 가격차이</span>
+                    <span>더 올 뉴 카니발 취등록세 계산</span>
+                    <span>신형 카니발 대기기간</span>
+                    <span>장기렌트 최저가 비교</span>
+                    <span>하이리무진 모의견적</span>
+                    <span>카니발 중고차 시세</span>
+                </div>
+            </div>
+
+            <p>신차를 구매하려는 소비자들은 기아 대리점을 직접 방문하는 정통 방식 외에도 온라인 비대면 다이렉트 가입 및 온라인 비교 전문 업체를 통해 비용을 알아보고 있습니다. 네이버, 구글, 유튜브 등 다양한 채널을 통해 시승 정보를 얻고 토스, 챗지피티, 제미나이와 같은 최신 AI 어시스턴트 서비스를 연계하여 월 유지비 시뮬레이션을 돌려보는 스마트한 구매 패턴이 일반화되고 있습니다.</p>
+        </section>
+
+        <section id="section-prices">
+            <h2>2026년형 더 올 뉴 카니발 등급별 공식 출시 가격표</h2>
+            <p>The 2026 카니발의 가격은 파워트레인(3.5 가솔린, 1.6 터보 하이브리드)과 탑승 인원(9인승, 7인승)에 따라 조율됩니다. 아래 가격표는 기본 품목 구성 및 조정을 마친 기아 공식 권장 소비자가격을 정리한 데이터입니다. 차량 구입 계획 수립 시 취등록세 및 부가 옵션 선택 비용은 별도로 발생하므로 대략적인 예산을 가늠해 보시는 편이 좋습니다.</p>
+
+            <h3>1. 9인승 모델 가격표 (3.5 가솔린 및 1.6 터보 하이브리드)</h3>
+            <p>9인승 모델은 다자녀 혜택, 사업자 부가세 환급, 버스전용차로 탑승 가능 등의 압도적인 제도적 이점을 가지고 있어 카니발 판매량의 대다수를 책임지고 있는 트림 라인업입니다.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>세부 모델 분류</th>
+                        <th>파워트레인</th>
+                        <th>트림명</th>
+                        <th>공식 출시 가격</th>
+                        <th>핵심 탑재 사양 정보</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>더 올 뉴 카니발 9인승 가솔린 프레스티지</td>
+                        <td>3.5 가솔린</td>
+                        <td>프레스티지</td>
+                        <td>36,360,000 원</td>
+                        <td>스마트 파워테일게이트, 전자식 룸미러 기본 탑재</td>
+                    </tr>
+                    <tr>
+                        <td>더 올 뉴 카니발 9인승 가솔린 노블레스</td>
+                        <td>3.5 가솔린</td>
+                        <td>노블레스</td>
+                        <td>4,071,000 원</td>
+                        <td>기아 디지털 키 2, 터치타입 아웃사이드 도어핸들 기본</td>
+                    </tr>
+                    <tr>
+                        <td>더 올 뉴 카니발 9인승 가솔린 시그니처</td>
+                        <td>3.5 가솔린</td>
+                        <td>시그니처</td>
+                        <td>4,426,000 원</td>
+                        <td>LED 리어 콤비네이션 램프, BOSE 사운드 선택 가능</td>
+                    </tr>
+                    <tr>
+                        <td>더 올 뉴 카니발 9인승 가솔린 X-Line</td>
+                        <td>3.5 가솔린</td>
+                        <td>X-Line</td>
+                        <td>4,502,000 원</td>
+                        <td>전용 블랙 디자인 패키지, 엠블럼, 타이어 휠 커스터마이징</td>
+                    </tr>
+                    <tr>
+                        <td>더 올 뉴 카니발 9인승 하이브리드 프레스티지</td>
+                        <td>1.6T 하이브리드</td>
+                        <td>프레스티지</td>
+                        <td>4,091,000 원</td>
+                        <td>스마트 파워테일게이트, E-VMC 하이브리드 특화 제어 시스템</td>
+                    </tr>
+                    <tr>
+                        <td>더 올 뉴 카니발 9인승 하이브리드 노블레스</td>
+                        <td>1.6T 하이브리드</td>
+                        <td>노블레스</td>
+                        <td>4,526,000 원</td>
+                        <td>1열 터치 도어핸들, 스마트 무선 충전 시스템, 지능형 편의 제어</td>
+                    </tr>
+                    <tr>
+                        <td>더 올 뉴 카니발 9인승 하이브리드 시그니처</td>
+                        <td>1.6T 하이브리드</td>
+                        <td>시그니처</td>
+                        <td>4,881,000 원</td>
+                        <td>순정 12.3인치 내비게이션, 차세대 ccNC 무선 OTA 업데이트 탑재</td>
+                    </tr>
+                    <tr>
+                        <td>더 올 뉴 카니발 9인승 하이브리드 X-Line</td>
+                        <td>1.6T 하이브리드</td>
+                        <td>X-Line</td>
+                        <td>4,957,000 원</td>
+                        <td>하이브리드 특유의 고연비와 강렬한 X-Line 외장 패키지의 조화</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>2. 7인승 모델 가격표 (3.5 가솔린 및 1.6 터보 하이브리드)</h3>
+            <p>7인승 모델은 2열에 프리미엄 릴렉션 시트가 적용되어 승차 공간의 쾌적함과 거주성이 월등히 높습니다. 고급스러운 패밀리카 및 세컨드 카로 주로 출고됩니다.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>세부 모델 분류</th>
+                        <th>파워트레인</th>
+                        <th>트림명</th>
+                        <th>공식 출시 가격</th>
+                        <th>핵심 탑재 사양 정보</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>더 올 뉴 카니발 7인승 가솔린 노블레스</td>
+                        <td>3.5 가솔린</td>
+                        <td>노블레스</td>
+                        <td>4,265,000 원</td>
+                        <td>2열 가죽 통풍 및 열선시트, 아웃도어 가변 적재 가능</td>
+                    </tr>
+                    <tr>
+                        <td>더 올 뉴 카니발 7인승 가솔린 시그니처</td>
+                        <td>3.5 가솔린</td>
+                        <td>시그니처</td>
+                        <td>4,637,000 원</td>
+                        <td>고급 다이내믹 앰비언트 라이트, 프리미엄 운전 자세 제어</td>
+                    </tr>
+                    <tr>
+                        <td>더 올 뉴 카니발 7인승 가솔린 X-Line</td>
+                        <td>3.5 가솔린</td>
+                        <td>X-Line</td>
+                        <td>4,689,000 원</td>
+                        <td>X-Line 패키지 전용 내장 가죽 컬러 및 전면부 그릴 차별화</td>
+                    </tr>
+                    <tr>
+                        <td>더 올 뉴 카니발 7인승 하이브리드 노블레스</td>
+                        <td>1.6T 하이브리드</td>
+                        <td>노블레스</td>
+                        <td>4,708,000 원</td>
+                        <td>7인승 전용 하체 스트럿바 보강을 통한 고급 하이브리드 승차감 구현</td>
+                    </tr>
+                    <tr>
+                        <td>더 올 뉴 카니발 7인승 하이브리드 시그니처</td>
+                        <td>1.6T 하이브리드</td>
+                        <td>시그니처</td>
+                        <td>5,080,000 원</td>
+                        <td>승객 지능형 온도 제어, 메모리 시트, 스마트 테일게이트 완비</td>
+                    </tr>
+                    <tr>
+                        <td>더 올 뉴 카니발 7인승 하이브리드 X-Line</td>
+                        <td>1.6T 하이브리드</td>
+                        <td>X-Line</td>
+                        <td>5,132,000 원</td>
+                        <td>연비와 외장 감성을 동시에 완벽하게 충족시키는 플래그십 트림</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>3. 특수 전용 트림 및 하이리무진 라인업 가격 분포</h3>
+            <p>더 올 뉴 카니발 하이리무진 9인승 모델이나 공간의 럭셔리함을 극대화한 더 올 뉴 카니발 하이리무진 7인승, 극상의 의전 편의성을 제공하는 더 올 뉴 카니발 하이리무진 4인승 트림은 6,000만 원대부터 시작하여 최고 1억 원에 육박하는 가격 구조를 가집니다. 하이루프 높이에 따른 쾌적한 전고를 자랑하는 더 올 뉴 카니발 하이루프 9인승 모델과 차박 캠핑 매니아를 공략하기 위해 가변식 시트 평탄화를 적용한 더 올 뉴 카니발 아웃도어 트림 등 세그먼트별 파생 모델 역시 꾸준한 인기를 끌고 있습니다. 이 외에도 카니발 리무진 가솔린 시그니처나 카니발 하이브리 7인승 시그니처 트림에 최상위 오디오 및 운전자 보조 패키지를 적용해 럭셔리 등급으로 출고하는 방식이 널리 쓰입니다.</p>
+        </section>
+
+        <section id="section-comparison">
+            <h2>3.5 가솔린 vs 1.6 터보 하이브리드 경제성 및 성능 차이 비교</h2>
+            <p>카니발을 새로 구매할 때 예비 차주들이 가장 깊게 고민하는 지점이 바로 엔진 종류의 선택입니다. 전통적으로 장거리 출고 비중이 높을 때는 더 올 뉴 카니발 2.2 디젤 프레스티지, 더 올 뉴 카니발 2.2 디젤 노블레스, 더 올 뉴 카니발 2.2 디젤 시그니처와 같은 경유 엔진 모델이 추천되었으나, 2026년 현재 기준으로는 친환경 정책 기조와 함께 승용 세단에 버금가는 정숙함이 강조되면서 하이브리드의 판매 점유율이 70퍼센트 이상에 달하고 있습니다.</p>
+
+            <p>두 엔진 형식은 연간 세금과 평균적인 주행거리에 따른 기름값 절감 금액에서 뚜렷한 차이점을 보여줍니다. 하이브리드 시스템은 모터 구동 지원 덕분에 도심 및 가다 서다를 반복하는 정체 구간에서 탁월한 고연비를 제공하는 장점이 있습니다. 반면 3.5 가솔린은 부드러운 6기통 회전 질감과 뛰어난 가속 응답 속도, 그리고 차량 구입 시 초기 가격이 하이브리드 트림보다 450만 원 이상 저렴하다는 강점이 명확합니다.</p>
+
+            <div class="chart-section">
+                <div class="chart-title">연간 15,000km 주행 기준, 연료비 및 자동차세 합산 연간 유지 비용 비교 (단위: 만 원)</div>
+                
+                <div class="bar-wrapper">
+                    <div class="bar-label">
+                        <span>2026년형 카니발 3.5 가솔린 모델 (복합연비 9.0km/l 기준)</span>
+                        <span>약 320만 원</span>
+                    </div>
+                    <div class="bar-track">
+                        <div class="bar-fill" style="width: 95%;">95%</div>
+                    </div>
+                </div>
+
+                <div class="bar-wrapper">
+                    <div class="bar-label">
+                        <span>2026년형 카니발 1.6 터보 하이브리드 모델 (복합연비 13.5km/l 기준)</span>
+                        <span>약 210만 원</span>
+                    </div>
+                    <div class="bar-track">
+                        <div class="bar-fill accent" style="width: 62%;">62%</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>위 경제성 시뮬레이션에서 나타나듯이 연간 유지 금액의 차이는 대략 110만 원선입니다. 약 4년 이상 차를 패밀리카로 보유하고 정기적으로 시내 주행 비중이 높다면 초기 차 값 차액인 450만 원을 충분히 회수하고도 남아 경제적으로 이득입니다. 반면 주말에 장거리 가끔 타거나 연 주행거리가 10,000km 이하라면 초기 할부 원금 부담이 낮은 가솔린 9인승 노블레스 트림을 다이렉트 할부 방식으로 신청하는 것이 가성비 면에서 현명할 수 있습니다.</p>
+        </section>
+
+        <section id="section-finance">
+            <h2>장기렌트, 오토리스, 다이렉트 할부 구매 전략: 최저가 성지 찾는 법</h2>
+            <p>차량을 일시불로 전액 지불하고 인수하는 금융 수단을 제외하고 나면, 대다수 금융 소비자들은 할부 및 임대형 상품을 두고 저울질하게 됩니다. 특히 개인사업자나 법인 명의로 업무 차량을 운영하고자 한다면 세무 회계 처리가 아주 유용한 신차 장기렌트와 오토리스 상품의 컨설팅을 전문 대행 업체를 통해 진행하는 추세입니다.</p>
+
+            <p>장기렌트 상품은 가입 절차가 간단할 뿐만 아니라 취등록세, 연간 자동차세, 매년 갱신해야 하는 자동차 종합보험료 요금까지 전액 월 렌트료 하나에 통합 빌링되는 구조입니다. 운전자의 사고 경력이 많거나 연령대가 낮아 자동차 보험 요금제가 비싸게 책정되는 예비 차주라면 다이렉트 렌트 프로그램을 활용해 종합 세제 요금 계산을 돌려보는 것이 가장 싼곳을 선별하는 꿀팁입니다.</p>
+
+            <p>현재 온라인 신차 에이전시 사이트에서는 신규 고객 유치를 위한 프로모션 대결이 치열하게 벌어지고 있습니다. 인터넷 커뮤니티 동호회에서 입소문을 탄 좌표 및 장기렌트 성지 업체를 잘 선별하여 가입 상담을 정밀 신청할 경우, 특판 차량 배정을 통해 출고 기간을 대폭 단축할 수 있습니다. 뿐만 아니라 고품질 프리미엄 썬팅 및 고화질 블랙박스 사은품은 물론이고 비공식 추가 현금지원이나 모바일 주유 상품권 이벤트 혜택까지 골고루 누릴 수 있어 실제 견적 비교 작업은 선택이 아닌 필수입니다.</p>
+        </section>
+
+        <section id="section-owner-reviews">
+            <h2>보배드림 및 에펨코리아 실제 오너들의 내돈내산 평가와 장단점 분석</h2>
+            <p>디시인사이드 자동차 갤러리, 보배드림 자유게시판, 펨코(에펨코리아) 차량 커뮤니티 등에서 가감 없이 터져 나오는 실제 소유주들의 실주행 후기와 비판 의견들은 카니발을 선택하는 최종 단계에서 지침서 역할을 해 줍니다. 마케팅성 찬사로 무장한 공식 매뉴얼 광고 내용과 달리 날 것 그대로의 장단점이 분명하게 요약되어 나타나기 때문입니다.</p>
+
+            <p>오너들이 입을 모아 자랑하는 최대 장점은 단연 대체 불가능한 널찍한 실내 거주 공간과 실용성입니다. 슬라이딩 도어를 전동식으로 열었을 때 나오는 2열과 3열 탑승부 공간은 팰리세이드 등의 준대형 SUV조차 흉내 내기 어려운 수준입니다. 대형 마트 카트 두세 개 분량의 유모차, 캠핑 짐, 이삿짐까지 수월하게 우겨넣을 수 있는 내부 깊은 싱킹 시트 시스템은 주부와 다둥이 가장들의 만족감을 완벽하게 책임집니다. 하이브리드 등급의 경우 계기판 연비 수치가 리터당 15km를 쉽게 달성해 주유할 때마다 미소가 번진다는 내돈내산 주유 후기도 많습니다.</p>
+
+            <p>하지만 단점 역시 명확하게 거론됩니다. 차량 전폭이 2미터에 가깝고 전장이 매우 길어 구축 아파트나 좁은 골목길 빌라 1층 주차장에서 매일같이 겪는 주차 헬 난이도는 최대 애로사항입니다. 패밀리 RV인 만큼 승차감 위주로 하체 완충 장치를 소프트하게 조정해 두었기에, 3열 탑승객의 경우 고속도로 장거리 운전 시 롤링과 피칭 현상에 의해 일어나는 멀미 문제를 종종 토로하곤 합니다. 특히 1.6 하이브리드 전용 파워트레인은 만차 상태로 가파른 고갯길 오르막을 주행할 때 4기통 소형 가솔린 엔진의 칼칼한 엔진 구동 소음이 내부에 들이쳐 정숙성이 다소 무너진다는 단점 지적 또한 상존합니다.</p>
+        </section>
+
+        <section id="section-calculator">
+            <h2>더 올 뉴 카니발 모의견적 및 예상 월 납입금 셀프 계산기</h2>
+            <p>원하는 엔진과 탑승 인원 설정을 조합하여 계약 기간에 따른 대략적인 예상 월 청구 비용을 직접 뽑아볼 수 있는 시뮬레이션 양식입니다. 간편한 구조로 세팅되어 있어 금융 컨설팅 전 최종 예산 윤곽을 잡는 데 도움이 됩니다.</p>
+            
+            <div class="calc-wrapper">
+                <div class="calc-grid">
+                    <div class="field-group">
+                        <label for="car-select">선호 세부 모델 선택</label>
+                        <select id="car-select">
+                            <option value="36360000">가솔린 9인승 프레스티지 (3,636만 원)</option>
+                            <option value="40710000">가솔린 9인승 노블레스 (4,071만 원)</option>
+                            <option value="44260000">가솔린 9인승 시그니처 (4,426만 원)</option>
+                            <option value="40910000">하이브리드 9인승 프레스티지 (4,091만 원)</option>
+                            <option value="45260000">하이브리드 9인승 노블레스 (4,526만 원)</option>
+                            <option value="48810000">하이브리드 9인승 시그니처 (4,881만 원)</option>
+                            <option value="50800000">하이브리드 7인승 시그니처 (5,080만 원)</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="finance-type">금융 이용 방식</label>
+                        <select id="finance-type">
+                            <option value="rent">다이렉트 신차 장기렌트 (보험, 세금 통합)</option>
+                            <option value="lease">저금리 오토 리스 (자동차세 미포함)</option>
+                            <option value="installment">저금리 신차 할부 (초기금 일부 납입 조건)</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="period">이용 및 계약 약정 기간</label>
+                        <select id="period">
+                            <option value="36">36 개월 약정</option>
+                            <option value="48">48 개월 약정</option>
+                            <option value="60">60 개월 약정</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="prepayment">선수금 및 보증금 조건 (비율)</label>
+                        <select id="prepayment">
+                            <option value="0">무보증 (초기 비용 0퍼센트)</option>
+                            <option value="10">선수조건 일부 납입 (10퍼센트)</option>
+                            <option value="20">선수조건 안정 납입 (20퍼센트)</option>
+                            <option value="30">인수형 자금 예치 (30퍼센트)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="btn-calc" onclick="calculateCarnivalCost()">실시간 예상 월 납입금 즉석 산출하기</button>
+                <div class="calc-result" id="calc-display"></div>
+            </div>
+            <p>위 시뮬레이션 계산 결과는 업계 평균 연리 4.8퍼센트 금리 수준을 기준으로 임의 가정한 가이드 견적 수치입니다. 실제 대행 에이전트의 정밀 프로모션 할인 요율 및 가입 시점 세제 혜택 유무에 따라 세부적인 최종 실구매 가격표 수치는 일부 변동될 수 있습니다.</p>
+        </section>
+
+        <section id="section-faq">
+            <h2>자주 묻는 질문 (FAQ)</h2>
+            <div class="faq-wrapper">
+                <div class="faq-node">
+                    <div class="faq-query">Q. 카니발 하이브리드 모델의 친환경차 세제 혜택 적용 및 고속도로 버스전용차로 탑승 기준이 궁금합니다.</div>
+                    <div class="faq-reply">
+                        A. 카니발 1.6 터보 하이브리드 모델은 친환경 세제 혜택 기준 조건인 리터당 14.3km 복합연비를 살짝 하회하는 수치를 나타내므로 개별소비세 친환경 감면 대상에서는 일부 불이익이 있거나 하향 적용될 수 있습니다. 다만 공영주차장 주차 비용 감면 및 남산터널 혼잡통행료 면제 등의 친환경 저공해 차량 2종 혜택은 정상적으로 이용 가능합니다. 9인승 모델의 경우 실차량에 최소 6명 이상의 인원이 실제 탑승하고 있어야만 고속도로 내 버스전용차로 구간에 합법적으로 진입해 논스톱 이동 혜택을 볼 수 있으며, 이를 위반할 시 벌금과 벌점이 부과됩니다.
+                    </div>
+                </div>
+
+                <div class="faq-node">
+                    <div class="faq-query">Q. 2026년식 카니발의 평균적인 출고 인도 지연 기간과 조기 출고 전술은 무엇이 있나요?</div>
+                    <div class="faq-reply">
+                        A. 3.5 가솔린 트림은 계약 접수 후 평균 2개월에서 3개월이면 안전하게 차량을 수령할 수 있으나, 하이브리드 시그니처 및 엑스라인 등 인기 라인업은 여전히 폭발적인 수요 집중으로 인해 평균 8개월에서 최대 10개월까지 대기 지연이 나타나고 있습니다. 빠르게 새 차를 출고하고자 하신다면, 여러 신차 장기렌트 어플이나 캐피탈 플랫폼이 선점 확보해 둔 선구매 즉시 출고 특판 물량 리스트를 조회하여 계약하는 대행 상담 기법이 시간을 아끼는 가장 우수한 해결 방안입니다.
+                    </div>
+                </div>
+
+                <div class="faq-node">
+                    <div class="faq-query">Q. 개인 사업자가 카니발을 장기렌트로 이용할 때 누리는 비용 처리 및 절세 혜택은 어떻게 되나요?</div>
+                    <div class="faq-reply">
+                        A. 카니발 9인승 차량을 사업 목적으로 장기렌트 또는 리스 제도를 통해 가입하여 굴릴 경우, 부가세법상 업무용 소형 승용차 제한 규정에서 완전히 제외되는 승합 범주 차량이기 때문에 매달 지불하는 납입료 전체 세액 중 상당 금액을 온전히 부가세 환급 처리 신청할 수 있습니다. 또한 연간 법인 혹은 개인 사업자의 가용 소득 경비 처리를 통틀어 차량 리스 비용 한도로 수월하게 손비 회계 기입 처리가 진행되므로 강력한 소득세 절세 이점이 제공되어 제일 추천해 드리는 법인 차 구매 전술입니다.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-external">
+            <h2>공신력 있는 참고 정보 및 검증 자료 사이트 좌표 목록</h2>
+            <p>더 올 뉴 카니발 가격표 및 기술적 사양 구성에 대해 더 정교하고 신뢰도 높은 데이터를 얻고 싶다면, 아래의 검증된 공공 정보 사이트 및 제조사 메인 허브 좌표를 직접 참조해 전문성을 보강하시길 바랍니다.</p>
+            <div class="external-links">
+                <a href="https://directtcheckd.koreahankang.com" target="_blank" rel="nofollow noopener">The 2026 Carnival Official Pricing and Option Catalog</a>
+                <a href="https://namu.wiki/w/%EA%B8%B0%EC%95%84%20%EC%B9%B4%EB%8B%88%EB%B0%9C" target="_blank" rel="nofollow noopener">기아 카니발 나무위키 백과 정보</a>
+                <a href="https://www.kia.com/kr/vehicles/carnival/features" target="_blank" rel="nofollow noopener">기아 공식 웹사이트 카니발 제품소개 및 카탈로그 다운로드</a>
+            </div>
+        </section>
+
+        <a href="#section-calculator" class="cta-action-btn">내 차량 조건에 딱 맞는 최저가 실시간 견적 확인하러 가기</a>
     </main>
-  </body>
-</html>
+
+  
+
+    <script>
+        // FAQ 아코디언 인터랙션 제어 스크립트
+        document.querySelectorAll('.faq-query').forEach((item) => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                const isCurrentlyOpen = answer.style.display === 'block';
+
+                // 기존 열린 것 일괄 닫기 조치
+                document.querySelectorAll('.faq-reply').forEach((ans) => {
+                    ans.style.display = 'none';
+                });
+
+                // 타깃 아코디언 토글 연출
+                if (!isCurrentlyOpen) {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+
+        // 예상 견적 셀프 계산 산출 로직
+        function calculateCarnivalCost() {
+            const basePrice = parseInt(document.getElementById('car-select').value);
+            const financeType = document.getElementById('finance-type').value;
+            const periodMonths = parseInt(document.getElementById('period').value);
+            const prepaymentRatio = parseInt(document.getElementById('prepayment').value) / 100;
+
+            // 기본 월 상환금 수식 대략적 알고리즘 설계
+            let principal = basePrice * (1 - prepaymentRatio);
+            let interestRate = 0.048; // 평균 금리 4.8퍼센트 수준 가산
+            
+            // 금융 형태에 따른 부대비 보정 계수 산출 (장기렌트 보험 포함, 리스 순수 차값 등 차등 적용)
+            let financeMultiplier = 1.0;
+            if (financeType === 'rent') {
+                financeMultiplier = 1.12; // 종합보험 및 자동차세 통합료 가산 계수
+            } else if (financeType === 'lease') {
+                financeMultiplier = 1.05; // 단순 이자 리스 요율
+            } else {
+                financeMultiplier = 1.02; // 할부 설정 기준
+            }
+
+            let calculatedMonthlyCost = Math.round((principal * (1 + (interestRate * (periodMonths / 12)))) / periodMonths * financeMultiplier);
+            
+            // 금액 포맷 변경
+            let displayValue = calculatedMonthlyCost.toLocaleString();
+            let resultDisplay = document.getElementById('calc-display');
+            
+            resultDisplay.style.display = 'block';
+            resultDisplay.innerText = "예산 설정 조건에 따른 예상 청구 납입금은 매월 약 " + displayValue + " 원 내외로 산출됩니다.";
+        }
+    </script>
+  
